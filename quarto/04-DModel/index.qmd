@@ -30,31 +30,15 @@ using Random
 using Plots
 gr()
 
-__X = rand(20) * 5 .- 2.5
-CST = +15.0:1.500:+30.0 |> collect
-LIN = -12.5:0.250:-10.0 |> collect
-QUA = -2.50:0.125:-1.50 |> collect
-CUB = +2.00:0.125:+2.50 |> collect
-
-function newSet(rnd = 2.0; _lin=true, _qua=false, _cub=false)
-    COE = [
-        rand(CST),
-        _lin ? rand(LIN) : 0.0,
-        _qua ? rand(QUA) : 0.0,
-        _cub ? rand(CUB) : 0.0,
-    ]
-    __F = hcat(
-        map(x -> one(x),  __X),
-        map(x->x,         __X),
-        map(x->x^2,       __X),
-        map(x->x^3,       __X),
-    )
+function tmp_gen_lsq(; rnd = 0.25)
+    __X = rand(15) * 6 .+ 1.0
     RND = rnd * rand(length(__X))
-    __Y = __F * COE + RND
+    CST = 10.0 + rand() * 5
+    __Y = sin.(__X .- 1.0) + 0.5 * __X .+ CST + RND
     return (__X, __Y)
 end
 
-data = newSet(5.0, _lin=true, _qua=true, _cub=true)
+data = tmp_gen_lsq()
 
 MODELS = Dict(
     :quadr => [
@@ -69,6 +53,14 @@ MODELS = Dict(
         x -> x^3,
     ],
 )
+
+function leastSq(the_x, the_y, MODEL)
+    X = hcat([ F.(the_x) for F in MODEL ]...)
+    y = copy(the_y)
+    return a = X \ y
+end
+
+model(MOD, a, x) = sum(a .* [F.(x) for F in MOD])
 ```
 
 Suppose one has tabular data from an experiment that relates a system performace
