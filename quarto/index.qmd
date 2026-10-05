@@ -1,5 +1,7 @@
 ---
-title: "Computational Numerical Methods in Julia"
+title: "Computational Numerical Methods"
+---
+
 ---
 
 A practical introduction to numerical methods in Julia, covering error analysis,
