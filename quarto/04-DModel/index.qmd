@@ -17,9 +17,9 @@ i.e., _curve-fitting_.
 
 ## Interpolation
 
-## Curve-Fitting
+## Curve Fitting
 
-### Chi-Square Curve-Fitting
+### Least-Squares
 
 ```{julia}
 #| echo: false
@@ -31,10 +31,10 @@ using Plots
 gr()
 
 __X = rand(20) * 5 .- 2.5
-LIN = -12.5:0.250:-10.0 |> collect
 CST = +15.0:1.500:+30.0 |> collect
+LIN = -12.5:0.250:-10.0 |> collect
 QUA = -2.50:0.125:-1.50 |> collect
-CUB = +1.50:0.125:+2.00 |> collect
+CUB = +2.00:0.125:+2.50 |> collect
 
 function newSet(rnd = 2.0; _lin=true, _qua=false, _cub=false)
     COE = [
@@ -55,6 +55,20 @@ function newSet(rnd = 2.0; _lin=true, _qua=false, _cub=false)
 end
 
 data = newSet(5.0, _lin=true, _qua=true, _cub=true)
+
+MODELS = Dict(
+    :quadr => [
+        x -> one(x),
+        x -> x,
+        x -> x^2,
+    ],
+    :cubic => [
+        x -> one(x),
+        x -> x,
+        x -> x^2,
+        x -> x^3,
+    ],
+)
 ```
 
 Suppose one has tabular data from an experiment that relates a system performace
