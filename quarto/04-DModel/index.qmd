@@ -24,10 +24,6 @@ i.e., _curve-fitting_.
 ### Chi-Square Curve-Fitting
 
 ```{julia}
-#| echo: false
-#| output: false
-#| message: false
-#| warning: false
 
 using Random
 using Plots
