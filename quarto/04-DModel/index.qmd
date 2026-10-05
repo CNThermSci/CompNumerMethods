@@ -30,7 +30,7 @@ using Random
 using Plots
 gr()
 
-__X = -2.50:0.250:+2.50 |> collect
+__X = rand(20) * 5 .- 2.5
 LIN = -12.5:0.250:-10.0 |> collect
 CST = +15.0:1.500:+30.0 |> collect
 QUA = -2.50:0.125:-1.50 |> collect
