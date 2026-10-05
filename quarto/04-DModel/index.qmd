@@ -30,11 +30,11 @@ using Random
 using Plots
 gr()
 
-__X = -2.50:0.125:2.00 |> collect
-LIN = -12.5:0.250:-6.0 |> collect
-CST = 15.00:1.500:30.0 |> collect
-QUA = -2.50:0.125:-0.5 |> collect
-CUB =  0.75:0.125:1.50 |> collect
+__X = -2.50:0.250:+2.50 |> collect
+LIN = -12.5:0.250:-10.0 |> collect
+CST = +15.0:1.500:+30.0 |> collect
+QUA = -2.50:0.125:-1.50 |> collect
+CUB = +1.50:0.125:+2.00 |> collect
 
 function newSet(rnd = 2.0; _lin=true, _qua=false, _cub=false)
     COE = [
@@ -58,7 +58,7 @@ data = newSet(5.0, _lin=true, _qua=true, _cub=true)
 ```
 
 Suppose one has tabular data from an experiment that relates a system performace
-parameter, say, $y$, to input parameter $x$ values:
+parameter, say, $y$, to input parameter $x$ values, as shown:
 
 ```{julia}
 #| fig-width: 4
