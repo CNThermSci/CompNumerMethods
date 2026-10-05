@@ -2,8 +2,20 @@
 title: "Data Modeling: Interpolation and Curve-Fitting"
 ---
 
-# Interpolation
+This chapter deals with modeling discrete one-dimensional data with functions.
 
-# Curve-Fitting
+Tabular data has a discrete nature, therefore not allowing continuous operations
+such as derivation, integration, etc, to find maxima, minima, areas, and the
+like. Modeling tabular data allows one to obtain a surrogate continuous function
+for the original tabular data.
+
+One can identify two main approaches in constructing such a function: (i) one
+that passes through all of the tabulated data points, i.e., an _interpolation_,
+and (ii) one that captures the data behavior within a pre-defined funcion base,
+i.e., _curve-fitting_.
+
+## Interpolation
+
+## Curve-Fitting
 
 {{< include 02-CurveFit/chi-square.qmd >}}
