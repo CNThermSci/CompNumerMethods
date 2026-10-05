@@ -5,7 +5,7 @@ book:
   title: "Computational Numerical Methods"
   subtitle: "A Julia Approach"
   author: "C. Naaktgeboren, PhD"
-  date: "2026"
+  date: today
   chapters:
     - index.qmd
     - 04-DModel/index.qmd
