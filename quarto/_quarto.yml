@@ -1,0 +1,32 @@
+project:
+  type: book
+
+book:
+  title: "Introductory Numerical Methods"
+  subtitle: "A Julia Approach"
+  author: "C. Naaktgeboren, PhD"
+  date: today
+  chapters:
+    - index.qmd
+    - 04-DModel/index.qmd
+#    - 01-Errors/index.qmd
+#    - 02-FRoots/index.qmd
+#    - 03-LinSys/index.qmd
+#    - 05-Integr/index.qmd
+#    - 06-SolODE/index.qmd
+
+engines: ['julia']
+
+execute:
+  keep-md: true
+
+format:
+  html:
+    theme: superhero
+    toc: true
+    number-sections: true
+    code-fold: true
+  typst:
+    keep-typ: true
+    toc: true
+    number-sections: true

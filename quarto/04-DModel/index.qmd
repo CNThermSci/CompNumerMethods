@@ -1,0 +1,95 @@
+---
+title: "Data Modeling: Interpolation and Curve-Fitting"
+engine: julia
+---
+
+This chapter deals with modeling discrete one-dimensional data with functions.
+
+Tabular data has a discrete nature, therefore not allowing continuous
+operations---such as continuous evaluations, derivation, integration, etc.---to
+find maxima, minima, areas, and the like. Modeling tabular data allows one to
+obtain a surrogate continuous function for the original tabular data.
+
+One can identify two main approaches in constructing such a function: (i) one
+that passes through all of the tabulated data points, i.e., an _interpolation_,
+and (ii) one that captures the data behavior within a pre-defined funcion base,
+i.e., _curve-fitting_.
+
+## Interpolation
+
+## Curve Fitting
+
+### Least-Squares
+
+```{julia}
+#| echo: false
+#| output: false
+#| message: false
+
+using Random
+using Plots
+gr()
+
+__X = rand(20) * 5 .- 2.5
+CST = +15.0:1.500:+30.0 |> collect
+LIN = -12.5:0.250:-10.0 |> collect
+QUA = -2.50:0.125:-1.50 |> collect
+CUB = +2.00:0.125:+2.50 |> collect
+
+function newSet(rnd = 2.0; _lin=true, _qua=false, _cub=false)
+    COE = [
+        rand(CST),
+        _lin ? rand(LIN) : 0.0,
+        _qua ? rand(QUA) : 0.0,
+        _cub ? rand(CUB) : 0.0,
+    ]
+    __F = hcat(
+        map(x -> one(x),  __X),
+        map(x->x,         __X),
+        map(x->x^2,       __X),
+        map(x->x^3,       __X),
+    )
+    RND = rnd * rand(length(__X))
+    __Y = __F * COE + RND
+    return (__X, __Y)
+end
+
+data = newSet(5.0, _lin=true, _qua=true, _cub=true)
+
+MODELS = Dict(
+    :quadr => [
+        x -> one(x),
+        x -> x,
+        x -> x^2,
+    ],
+    :cubic => [
+        x -> one(x),
+        x -> x,
+        x -> x^2,
+        x -> x^3,
+    ],
+)
+```
+
+Suppose one has tabular data from an experiment that relates a system performace
+parameter, say, $y$, to input parameter $x$ values, as shown:
+
+```{julia}
+#| fig-width: 4
+#| fig-height: 2
+scatter(data...,
+    xlabel="\$x\$",
+    ylabel="\$y\$",
+    label="data",
+    legend=:topright,
+    size=(480, 240),
+)
+```
+
+The available data is limited, taken at irregular intervals, and contains
+uncertainty. A designer of a new system or product of performance $y$ may need
+performace values for arbitrary $x$ values. Moreover, the designer may need
+information about local maxima, minima for $y$, and the corresponding $x$
+values. Raw tabular data offer challenges to all these very applicable tasks.
+
+
