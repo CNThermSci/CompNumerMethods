@@ -1,2 +1,11 @@
+# quarto generated
 /.quarto/
 **/*.quarto_ipynb
+
+# Quarto builds
+*html
+*html.md
+*pdf
+*typ
+*typst.md
+*_files
