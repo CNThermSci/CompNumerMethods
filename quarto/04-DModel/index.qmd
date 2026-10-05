@@ -1,5 +1,8 @@
 ---
 title: "Data Modeling: Interpolation and Curve-Fitting"
+engine: julia
+julia:
+  exeflags: ["--project"]
 ---
 
 This chapter deals with modeling discrete one-dimensional data with functions.
@@ -20,7 +23,55 @@ i.e., _curve-fitting_.
 
 ### Chi-Square Curve-Fitting
 
-Suppose one has tabular data that relates a system performace parameter, say, $y$, to input
-parameter $x$ values:
+```{julia}
+#| echo: false
+#| output: false
+#| message: false
+#| warning: false
 
+using Random
+using Plots
+gr()
+
+__X = -2.0:0.125:2.0 |> collect
+LIN = 1.0:0.125:3.0
+CST = LIN * (-1)
+QUA = LIN / sqrt(max(__X...))
+CUB = QUA / sqrt(max(__X...))
+
+function newSet(rnd = 1.5; _lin=true, _qua=false, _cub=false)
+    COE = [
+        rand(CST),
+        _lin ? rand(LIN) : 0.0,
+        _qua ? rand(QUA) : 0.0,
+        _cub ? rand(CUB) : 0.0,
+    ]
+    __F = hcat(
+        map(x -> one(x),  __X),
+        map(x->x,         __X),
+        map(x->x^2,       __X),
+        map(x->x^3,       __X),
+    )
+    RND = rnd * rand(length(__X))
+    __Y = __F * COE + RND
+    return (__X, __Y)
+end
+
+data = newSet(1.75, _lin=true, _qua=true, _cub=true)
+```
+
+Suppose one has tabular data from an experiment that relates a system performace
+parameter, say, $y$, to input parameter $x$ values:
+
+```{julia}
+#| fig-width: 4
+#| fig-height: 2
+scatter(data...,
+    xlabel="x",
+    ylabel="y",
+    label="experiment data",
+    legend=:bottomright,
+    size=(600, 300),
+)
+```
 
