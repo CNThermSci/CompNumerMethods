@@ -1,0 +1,34 @@
+Project:
+  type: book
+
+book:
+  title: "Computational Numerical Methods"
+  subtitle: "A Julia Approach"
+  author: "C. Naaktgeboren, PhD"
+  date: "2026"
+  chapters:
+    - index.qmd
+    - part: "Body"
+      chapters:
+#        - 2-BODY/01-Errors/index.qmd
+#        - 2-BODY/02-FRoots/index.qmd
+#        - 2-BODY/03-LinSys/index.qmd
+        - 2-BODY/04-FModel/index.qmd
+#        - 2-BODY/05-Integr/index.qmd
+#        - 2-BODY/06-SolODE/index.qmd
+
+engines: ['julia']
+
+execute:
+  keep-md: true
+
+format:
+  html:
+    theme: superhero
+    toc: true
+    number-sections: true
+    code-fold: true
+  typst:
+    keep-typ: true
+    toc: true
+    number-sections: true
