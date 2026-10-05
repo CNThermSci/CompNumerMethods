@@ -4,7 +4,7 @@ Computational Numerical Methods, a Julia approach
 
 ## Copyright
 
-See the `COPYRIGHT` file for Copyright information.
+See the [COPYRIGHT](COPYRIGHT) file for Copyright information.
 
 ## Author
 
