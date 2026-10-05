@@ -1,0 +1,7 @@
+---
+title: "Computational Numerical Methods in Julia"
+---
+
+A practical introduction to numerical methods in Julia, covering error analysis,
+root-finding, linear systems, data modeling, integration, and ordinary
+differential equations.
