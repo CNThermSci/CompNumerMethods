@@ -1,0 +1,5 @@
+---
+title: "Curve-Fitting"
+---
+
+{{< include chi-square.qmd >}}
