@@ -64,11 +64,18 @@ parameter, say, $y$, to input parameter $x$ values, as shown:
 #| fig-width: 4
 #| fig-height: 2
 scatter(data...,
-    xlabel="x",
-    ylabel="y",
+    xlabel="\$x\$",
+    ylabel="\$y\$",
     label="data",
     legend=:topright,
     size=(480, 240),
 )
 ```
+
+The available data is limited, taken at irregular intervals, and contains
+uncertainty. A designer of a new system or product of performance $y$ may need
+performace values for arbitrary $x$ values. Moreover, the designer may need
+information about local maxima, minima for $y$, and the corresponding $x$
+values. Raw tabular data offer challenges to all these very applicable tasks.
+
 
