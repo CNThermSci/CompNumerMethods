@@ -2,5 +2,5 @@
 title: "Data Modeling: Interpolation and Curve-Fitting"
 ---
 
-{{< include sec/01-Interpol/index.qmd >}}
-{{< include sec/02-CurveFit/index.qmd >}}
+{{< include 01-Interpol/index.qmd >}}
+{{< include 02-CurveFit/index.qmd >}}
