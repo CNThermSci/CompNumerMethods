@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "Computational Numerical Methods"
+  title: "Introductory Numerical Methods"
   subtitle: "A Julia Approach"
   author: "C. Naaktgeboren, PhD"
   date: today
