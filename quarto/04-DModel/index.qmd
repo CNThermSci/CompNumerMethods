@@ -19,7 +19,7 @@ i.e., _curve-fitting_.
 
 ## Curve Fitting
 
-### Least-Squares
+### Motivation
 
 ```{julia}
 #| echo: false
@@ -84,4 +84,5 @@ performace values for arbitrary $x$ values. Moreover, the designer may need
 information about local maxima, minima for $y$, and the corresponding $x$
 values. Raw tabular data offer challenges to all these very applicable tasks.
 
+### Least-Squares
 
