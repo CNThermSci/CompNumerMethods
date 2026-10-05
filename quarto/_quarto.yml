@@ -8,13 +8,12 @@ book:
   date: "2026"
   chapters:
     - index.qmd
-    - chapters:
-#        - 01-Errors/index.qmd
-#        - 02-FRoots/index.qmd
-#        - 03-LinSys/index.qmd
-        - 04-DModel/index.qmd
-#        - 05-Integr/index.qmd
-#        - 06-SolODE/index.qmd
+    - 04-DModel/index.qmd
+#    - 01-Errors/index.qmd
+#    - 02-FRoots/index.qmd
+#    - 03-LinSys/index.qmd
+#    - 05-Integr/index.qmd
+#    - 06-SolODE/index.qmd
 
 engines: ['julia']
 
