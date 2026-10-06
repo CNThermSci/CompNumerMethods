@@ -6,7 +6,6 @@ book:
   subtitle: "A Julia Approach"
   author: "C. Naaktgeboren, PhD"
   date: today
-  bibliography: Numerical-Methods.bib
   chapters:
     - index.qmd
     - 04-DModel/index.qmd
@@ -15,11 +14,14 @@ book:
 #    - 03-LinSys/index.qmd
 #    - 05-Integr/index.qmd
 #    - 06-SolODE/index.qmd
+    - references.qmd
 
 engines: ['julia']
 
 execute:
   keep-md: true
+
+bibliography: Numerical-Methods.bib
 
 format:
   html:
