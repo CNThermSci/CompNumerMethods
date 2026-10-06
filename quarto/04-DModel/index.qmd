@@ -86,20 +86,26 @@ info. Raw tabular data offer challenges to all these very applicable tasks.
 
 ### Least-Squares
 
-Suppose one wants to adjust a function---i.e., propose function _terms_, each
-one having its own adjustable _coefficients_---to represent, as adequately as
-possible, the behavior (or _gist_) of the discrete data, so that all needed
-continuos operations become possible once such function is found, that is to
-say, a function
+Suppose one wants to _adjust_ a function to represent, as _adequately_ as
+possible, the behavior (or _gist_) of the discrete data set, comprised of $n$
+$(x, y)$ pairs, so that all needed continuos operations become possible once
+such function is found.
+
+In order to accomplish such a task, the function needs to be adjustable, i.e.,
+to have as many degrees of freedom the analyst deems desirable or justifiable.
+Therefore, the analyst (you) proposes (chooses) $m$ linearly independent
+function _terms_, each one having its own adjustable _coefficients_, that is, a
+function
 
 $$
-f(x) = a_1 X_1(x) + a_2 X_2(x) + \ldots + a_n X_n(x)
+f(x) = a_1 X_1(x) + a_2 X_2(x) + \ldots + a_m X_m(x)
 $$ {#eq-fit-model}
 
-of $n$ terms---$n$ independent function forms $X_n(x)$ and respective adjustable
-coefficients $a_n$.
+which serves as a _model function_ for the data
+
+of $n$ independent terms of forms $X_n(x)$, each having its adjustable coefficient $a_n$.
 
 Least-squares as a method of maximum likelihood
-@william_h_press_numerical_2007{p. 776}
+[@william_h_press_numerical_2007{p. 776}]
 
 One method of obtaining
