@@ -112,7 +112,21 @@ criteria.
 
 ### Least-Squares
 
-One method of solving the data modeling problem is the _least-squares_ method.
+One method of solving the data modeling problem is the _least-squares method_.
+It consists in applying the crtiterion of _minimizing the sum of the squares of
+the differences between the data point images, $y_i$, and the value of the model
+function $f(x_i)$ over all $n$ data points_; that is to say:
+
+$$
+\mathrm{minimize} \sum_{i = 1}^n \left[y_i - f(x_i)\right]^2
+$$ {#eq-least-sq}
+
+over all $a_1 \ldots a_m$ coefficients.
+
+The rationale is simple: by minimizing the sum of the deviations squared, not
+only (potentially large) negative $y_i - f(x_i)$ differences won't cancel
+(potentially large) positive ones, but also large differences get amplified,
+thus inducing the function to stay close to the majority of the data points.
 
 Least-squares as a method of maximum likelihood
 [@william_h_press_numerical_2007{p. 776}]
