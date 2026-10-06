@@ -99,4 +99,7 @@ $$ {#eq-fit-model}
 of $n$ terms---$n$ independent function forms $X_n(x)$ and respective adjustable
 coefficients $a_n$.
 
+Least-squares as a method of maximum likelihood
+@william_h_press_numerical_2007{p. 776}
+
 One method of obtaining
