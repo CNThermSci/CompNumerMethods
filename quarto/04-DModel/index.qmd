@@ -84,7 +84,7 @@ uncertainty. A designer of a new system or product of performance $y$ may need
 maxima and minima for $y$, and (iii) the corresponding $x$ values, among other
 info. Raw tabular data offer challenges to all these very applicable tasks.
 
-### Least-Squares
+### Data Modeling
 
 Suppose one wants to _adjust_ a function to represent, as _adequately_ as
 possible, the behavior (or _gist_) of the discrete data set, comprised of $n$
@@ -98,12 +98,17 @@ function _terms_, each one having its own adjustable _coefficients_, that is, a
 function
 
 $$
-f(x) = a_1 X_1(x) + a_2 X_2(x) + \ldots + a_m X_m(x)
+f(x) = \sum_{k = 1}^m a_k X_k(x)
 $$ {#eq-fit-model}
 
-which serves as a _model function_ for the data
+which serves as a _model function_ for the data. The $X_k(x)$ functions compose
+the function _base_ of the model, and the $a_k$ are the models _coefficients_.
 
-of $n$ independent terms of forms $X_n(x)$, each having its adjustable coefficient $a_n$.
+The $m$ coefficients can then be adjusted to _some criteria_ as to render the
+adjusted $f(x)$ an _estimator_ for the underlying $y(x)$ relationship expressed
+by the discrete $n$ data points.
+
+### Least-Squares
 
 Least-squares as a method of maximum likelihood
 [@william_h_press_numerical_2007{p. 776}]
