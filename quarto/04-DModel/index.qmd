@@ -106,9 +106,13 @@ the function _base_ of the model, and the $a_k$ are the models _coefficients_.
 
 The $m$ coefficients can then be adjusted to _some criteria_ as to render the
 adjusted $f(x)$ an _estimator_ for the underlying $y(x)$ relationship expressed
-by the discrete $n$ data points.
+by the discrete $n$ data points. The process involves determining (solving for)
+the set of $m$ function coefficients $a_k$ that best fulfill the chosen
+criteria.
 
 ### Least-Squares
+
+One method of solving the data modeling problem is the _least-squares_ method.
 
 Least-squares as a method of maximum likelihood
 [@william_h_press_numerical_2007{p. 776}]
