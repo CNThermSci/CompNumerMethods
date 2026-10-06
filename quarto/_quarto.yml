@@ -6,6 +6,7 @@ book:
   subtitle: "A Julia Approach"
   author: "C. Naaktgeboren, PhD"
   date: today
+  bibliography: Numerical-Methods.bib
   chapters:
     - index.qmd
     - 04-DModel/index.qmd
@@ -26,7 +27,9 @@ format:
     toc: true
     number-sections: true
     code-fold: true
+    csl: ieee.csl
   typst:
     keep-typ: true
     toc: true
     number-sections: true
+    csl: ieee
