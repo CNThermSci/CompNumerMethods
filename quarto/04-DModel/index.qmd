@@ -86,8 +86,17 @@ info. Raw tabular data offer challenges to all these very applicable tasks.
 
 ### Least-Squares
 
-Suppose one wants to adjust a function---i.e., propose function _terms_ with
-adjustable _coefficients_---to represent, as best as possible, the _gist_ of the
-discrete data, so that all needed continuos operations become possible.
+Suppose one wants to adjust a function---i.e., propose function _terms_, each
+one having its own adjustable _coefficients_---to represent, as adequately as
+possible, the behavior (or _gist_) of the discrete data, so that all needed
+continuos operations become possible once such function is found, that is to
+say, a function
 
-One method of 
+$$
+f(x) = a_1 X_1(x) + a_2 X_2(x) + \ldots + a_n X_n(x)
+$$ {#eq-fit-model}
+
+of $n$ terms---$n$ independent function forms $X_n(x)$ and respective adjustable
+coefficients $a_n$.
+
+One method of obtaining
