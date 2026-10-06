@@ -102,7 +102,8 @@ f(x) = \sum_{k = 1}^m a_k X_k(x)
 $$ {#eq-fit-model}
 
 which serves as a _model function_ for the data. The $X_k(x)$ functions compose
-the function _base_ of the model, and the $a_k$ are the models _coefficients_.
+the function _basis_ of the model, and the $a_k$ parameters are the models
+_coefficients_.
 
 The $m$ coefficients can then be adjusted to _some criteria_ as to render the
 adjusted $f(x)$ an _estimator_ for the underlying $y(x)$ relationship expressed
@@ -121,12 +122,13 @@ $$
 \mbox{minimize over $a_1 \ldots a_m$} \quad \sum_{i = 1}^n \left[y_i - f(x_i)\right]^2
 $$ {#eq-least-sq}
 
-The rationale is simple: by minimizing the sum of the deviations squared, not
-only (potentially large) negative $y_i - f(x_i)$ differences won't cancel
-(potentially large) positive ones, but also large differences get amplified,
-thus inducing the function to stay close to the majority of the data points.
+The rationale can be intuitive: by minimizing the sum of the deviations squared,
+not only (potentially large) negative $y_i - f(x_i)$ differences won't cancel
+(potentially large) positive ones, but also large differences get quadratically
+amplified, thus inducing the function to stay close to the majority of the data
+points.
 
-Least-squares as a method of maximum likelihood
-[@william_h_press_numerical_2007{p. 776}]
+Reference @william_h_press_numerical_2007, p. 776, presents the least-squares as
+a method of maximum likelihood
 
 One method of obtaining
