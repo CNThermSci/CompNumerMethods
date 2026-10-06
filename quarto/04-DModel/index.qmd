@@ -73,16 +73,21 @@ scatter(data...,
     xlabel="\$x\$",
     ylabel="\$y\$",
     label="data",
-    legend=:topright,
+    legend=:bottomright,
     size=(480, 240),
 )
 ```
 
-The available data is limited, taken at irregular intervals, and contains
+The available data is limited, exists in irregular intervals, and show signs of
 uncertainty. A designer of a new system or product of performance $y$ may need
-performace values for arbitrary $x$ values. Moreover, the designer may need
-information about local maxima, minima for $y$, and the corresponding $x$
-values. Raw tabular data offer challenges to all these very applicable tasks.
+(i) performace values for arbitrary $x$ values, (ii) information about local
+maxima and minima for $y$, and (iii) the corresponding $x$ values, among other
+info. Raw tabular data offer challenges to all these very applicable tasks.
 
 ### Least-Squares
 
+Suppose one wants to adjust a function---i.e., propose function _terms_ with
+adjustable _coefficients_---to represent, as best as possible, the _gist_ of the
+discrete data, so that all needed continuos operations become possible.
+
+One method of 
