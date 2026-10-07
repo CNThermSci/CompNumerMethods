@@ -130,3 +130,5 @@ points.
 
 Reference @william_h_press_numerical_2007, p. 776, presents the least-squares as
 a method of maximum likelihood
+
+{{< include multi-model-lsq.qmd >}}
