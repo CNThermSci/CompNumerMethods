@@ -2,8 +2,7 @@ project:
   type: book
 
 book:
-  title: "Introductory Numerical Methods"
-  subtitle: "A Julia Approach"
+  title: "Practical Numerical Methods with Julia"
   author: "C. Naaktgeboren, PhD"
   date: today
   chapters:
