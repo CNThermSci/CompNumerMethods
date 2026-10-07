@@ -1,6 +1,6 @@
-# Computational Numerical Methods
+# Practical Numerical Methods with Julia
 
-Computational Numerical Methods, a Julia approach
+Practical Numerical Methods with Julia
 
 ## Copyright
 
